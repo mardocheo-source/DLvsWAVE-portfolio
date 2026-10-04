@@ -97,8 +97,8 @@ The code contains chronological/cutoff and temporal-availability checks, but the
 
 [Attribution and reuse](docs/PORTFOLIO_REUSE.md) explain that the original tree has no repository-wide software license; this preparation does not assign one to project or third-party content. Data-source rights are separate, and unverified redistribution assets are excluded.
 
-A simple software/portfolio reference is:
+Prepared citation template for the intended GitHub destination (repository creation/upload is pending explicit approval; this URL is not yet available):
 
 > mardocheo-source. *DLvsWAVE — Fixed Feature Banks and Scientific Data Pipelines*. GitHub. Version `portfolio-2026-10-04`. https://github.com/mardocheo-source/DLvsWAVE-portfolio/tree/portfolio-2026-10-04
 
-The version tag identifies this prepared source snapshot. This is not a DOI or a claim of peer-reviewed publication.
+The local version tag identifies this prepared source snapshot. Once the private repository and tag are uploaded, the reference above becomes usable; until then, do not cite the intended URL in applications. This is not a DOI or a claim of peer-reviewed publication.
