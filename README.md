@@ -14,6 +14,31 @@ My contribution represented in this repository is the integration of scientific-
 
 These are software and research-engineering contributions. They do not establish a new physical earthquake mechanism or an operational prediction system.
 
+## Origin and recorded development history
+
+This is a **curated, sanitised snapshot of several months of development**, derived from the substantially larger and more complex private [DLvsWAVE research codebase](https://github.com/mardocheo-source/DLvsWAVE). The original source and full research workspace remain private on GitHub. The short public Git history records portfolio preparation and privacy review, not the start of the project: this public export began on **4 October 2026**.
+
+The original recorded Git history spans **23 April–3 October 2026**, with **148 distinct reachable commits** across all local refs and current GitHub branches/tags, checked on 4 October 2026. Dates use the original UTC+09:00 timezone; commits shared by branches are counted once.
+
+| Recorded month | Original commits |
+| --- | ---: |
+| April 2026 | 46 |
+| May 2026 | 45 |
+| June 2026 | 19 |
+| July 2026 | 2 |
+| August 2026 | 27 |
+| September 2026 | 7 |
+| October 2026, through the 3rd | 2 |
+| **Total** | **148** |
+
+Selected milestones from the private history (short hashes identify private commits, not commits in this public export):
+
+- **23 April:** feature banks, benchmark and neural baselines already present — `cf8ef68bb65f`.
+- **18 May:** scientific earthquake-event extraction in the recorded source — `55ef5d651348`.
+- **27 August–7 September:** expanded scientific/forecast pipeline, Horizons acquisition and temporal-audit code — `0f7494754483` → `e0219f249422`.
+
+The exported source includes reviewed working-tree changes as well as committed work. The monthly counts describe the original recorded history, not every experiment or time spent; older commits and private data were intentionally not imported into this repository. This remains **scientific research and experimental software, not a validated operational forecasting system**.
+
 ## Start here: representative code
 
 | Capability | Files to inspect |
