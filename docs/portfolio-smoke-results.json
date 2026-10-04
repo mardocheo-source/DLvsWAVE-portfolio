@@ -44,5 +44,27 @@
     "neural training budget limited to 10 epochs",
     "latency values intentionally omitted; hardware/measurement dependent",
     "not an earthquake forecast or operational validation"
-  ]
+  ],
+  "clean_clone_verification": {
+    "date": "2026-10-04",
+    "fresh_virtual_environment": true,
+    "installed_with_documented_commands": true,
+    "pip_check": "passed",
+    "runtime": {
+      "python": "3.12.3",
+      "packages": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "scikit-learn": "1.9.1",
+        "torch": "2.11.0+cpu",
+        "pillow": "12.3.0",
+        "pypdf": "6.19.0",
+        "pykan": "0.2.8"
+      }
+    },
+    "all_three_recorded_metric_rows_reproduced_exactly": true,
+    "cli_train_help": "passed",
+    "existing_weak_peak_tests": 3,
+    "scope": "Only the existing small documented synthetic smoke check; no new scientific experiments or extended training."
+  }
 }

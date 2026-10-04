@@ -46,7 +46,7 @@ The benchmark records test error, parameter counts and additional diagnostic met
 
 ## Installation
 
-The checked example ran on Python **3.12.3**, NumPy **2.3.5**, SciPy **1.17.1**, scikit-learn **1.8.0** and PyTorch **2.11.0**, using CPU. From the repository root:
+The clean-clone installation and checked example ran on Python **3.12.3**, NumPy **2.5.3**, SciPy **1.18.1**, scikit-learn **1.9.1** and PyTorch **2.11.0+cpu**. From the repository root:
 
 ```bash
 python3.12 -m venv .venv
@@ -55,7 +55,7 @@ python -m pip install 'torch==2.11.0' --index-url https://download.pytorch.org/w
 python -m pip install -r requirements.txt
 ```
 
-The root requirements contain lower bounds rather than a complete environment lock; exact metrics can vary with installed versions. The execution command was verified in the existing runtime with the versions above, not in a newly provisioned environment. Advanced acquisition/forecast modules have additional dependencies listed in [requirements-forecast.txt](DLVS-Wave-v2/requirements-forecast.txt), and require separately provisioned inputs. GPU/XPU installation and extended workflows were not exercised in this preparation. Some legacy tests and replay commands assume archived study files or separately provisioned inputs; the complete legacy test suite is not certified for this stripped-data edition. The synthetic command below is the checked entry point.
+The root requirements contain lower bounds rather than a complete environment lock; exact metrics can vary with installed versions. The installation commands and synthetic example were verified in a fresh virtual environment from a clean GitHub clone on 2026-10-04; `pip check` reported no broken requirements. CLI help and three existing weak-peak tests also passed. Advanced acquisition/forecast modules have additional dependencies listed in [requirements-forecast.txt](DLVS-Wave-v2/requirements-forecast.txt), and require separately provisioned inputs. GPU/XPU installation and extended workflows were not exercised in this preparation. Some legacy tests and replay commands assume archived study files or separately provisioned inputs; the complete legacy test suite is not certified for this stripped-data edition. The synthetic command below is the checked entry point.
 
 ## One quick, verified example
 
@@ -70,7 +70,7 @@ python cli.py train --task friedman1 \
   --max-iter 10 --jobs 1 --db outputs/portfolio-smoke.db
 ```
 
-Checked successfully in approximately **25 seconds**. `--seeds 1` selects one seed (0), and the noise setting was the default 0. No scientific-data download or private input is needed. The database is a generated local output and is ignored by Git.
+Checked successfully in both the original runtime and a clean clone with a fresh environment. The clean-clone benchmark, CLI help and three lightweight controls completed in approximately **7 seconds** on the verification host; runtime varies with hardware. `--seeds 1` selects one seed (0), and the noise setting was the default 0. No scientific-data download or private input is needed. The database is a generated local output and is ignored by Git.
 
 | Verified execution | Test MSE | Parameters |
 | --- | ---: | ---: |
@@ -97,8 +97,8 @@ The code contains chronological/cutoff and temporal-availability checks, but the
 
 [Attribution and reuse](docs/PORTFOLIO_REUSE.md) explain that the original tree has no repository-wide software license; this preparation does not assign one to project or third-party content. Data-source rights are separate, and unverified redistribution assets are excluded.
 
-Prepared citation template for the intended GitHub destination (repository creation/upload is pending explicit approval; this URL is not yet available):
+A simple software/portfolio reference is:
 
-> mardocheo-source. *DLvsWAVE — Fixed Feature Banks and Scientific Data Pipelines*. GitHub. Version `portfolio-2026-10-04`. https://github.com/mardocheo-source/DLvsWAVE-portfolio/tree/portfolio-2026-10-04
+> mardocheo-source. *DLvsWAVE — Fixed Feature Banks and Scientific Data Pipelines*. GitHub. Version `portfolio-2026-10-04-verified`. https://github.com/mardocheo-source/DLvsWAVE-portfolio/tree/portfolio-2026-10-04-verified
 
-The local version tag identifies this prepared source snapshot. Once the private repository and tag are uploaded, the reference above becomes usable; until then, do not cite the intended URL in applications. This is not a DOI or a claim of peer-reviewed publication.
+The version tag identifies the prepared source snapshot after clean-clone installation and execution checks. This is not a DOI or a claim of peer-reviewed publication.
