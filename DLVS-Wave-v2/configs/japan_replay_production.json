@@ -1,0 +1,65 @@
+{
+  "reference_reproduction_root": "/mnt/git0/git/repository/DLvsWAVE/DLVS-Wave-v2/studies_output/AUTORUN_japan_joint_energy_and_spatial_production_20260906",
+  "maximum_seconds": 21600,
+  "energy_chunk_size": 128,
+  "energy_chunk_seconds": 600,
+  "location_data": {
+    "source_spatial_root": "/mnt/git0/git/repository/DLvsWAVE/DLVS-Wave-v2/studies_output/AUTORUN_japan_joint_energy_and_spatial_production_20260906/00_reproduction_audit/location_before_strict_publication_20260906T163359Z",
+    "output_spatial_root": "/mnt/git0/git/repository/DLvsWAVE/DLVS-Wave-v2/studies_output/AUTORUN_japan_joint_energy_and_spatial_production_20260906/02a_spatial_zones_forecast_multitarget/strict_one_shot_20260907",
+    "zone_count": 5,
+    "seed": 42,
+    "raw_astronomy_masters": {
+      "main_bodies_branch": "/mnt/git0/git/repository/DLvsWAVE/DLVS-Wave-v2/tests_env/multi_country_century_tests/loc1_japan_tohoku_1900_2030/master_7d_summarized.csv",
+      "minor_bodies_branch": "/mnt/git0/git/repository/DLvsWAVE/DLVS-Wave-v2/studies_output/AUTORUN_japan_megathrust_m77_aug2026_jan2027_production/minor_bodies_deep_35min_branch/01_data/minor_bodies_raw_master.csv"
+    }
+  },
+  "location_search": {
+    "spatial_root": "/mnt/git0/git/repository/DLvsWAVE/DLVS-Wave-v2/studies_output/AUTORUN_japan_joint_energy_and_spatial_production_20260906/02a_spatial_zones_forecast_multitarget/strict_one_shot_20260907",
+    "seed": 42,
+    "threads": 2,
+    "max_seconds": 3600,
+    "refinement_reserve_seconds": 800,
+    "report_reserve_seconds": 240,
+    "minimum_training_rows": 30,
+    "quality_target": 0.995,
+    "minimum_quality_trials": 3000,
+    "ensemble_pool": 120,
+    "fusion_trials": 2000,
+    "calibration_trials": 3000,
+    "analog_trials": 3000,
+    "analog_refinement_trials": 600,
+    "branches": {
+      "main_bodies_branch": {
+        "trials_per_family": 3000,
+        "refinement_trials": 3000
+      },
+      "minor_bodies_branch": {
+        "trials_per_family": 2400,
+        "refinement_trials": 240
+      }
+    },
+    "quality_definition": "0.5 event top1 accuracy + 0.3 macro-zone recall + 0.2 macro average precision; BCE tie-break",
+    "forecast_target_constraints": null,
+    "child_buffer_fraction": 0.1,
+    "search_output_root": "/mnt/git0/git/repository/DLvsWAVE/DLVS-Wave-v2/studies_output/AUTORUN_japan_joint_energy_and_spatial_production_20260906/02a_spatial_zones_forecast_multitarget/strict_one_shot_20260907/extended_search",
+    "study_root": "/mnt/git0/git/repository/DLvsWAVE/DLVS-Wave-v2/studies_output/AUTORUN_japan_joint_energy_and_spatial_production_20260906",
+    "forecast_mode": "one_shot_exogenous_features_fixed_model",
+    "feature_prefixes": [
+      "astro_"
+    ],
+    "energy_forecast_csv": "/mnt/git0/git/repository/DLvsWAVE/DLVS-Wave-v2/studies_output/AUTORUN_japan_joint_energy_and_spatial_production_20260906/01_energy_forecast_m77/fusion_main_minor/final_prospective_forecast.csv",
+    "map_bounds": [
+      28,
+      46.5,
+      127,
+      149.5
+    ]
+  },
+  "analog_overrides": {
+    "max_seconds": 1200,
+    "refinement_reserve_seconds": 250,
+    "report_reserve_seconds": 180,
+    "analog_trials": 3000,
+    "analog_refinement_trials": 600
+  }
+}

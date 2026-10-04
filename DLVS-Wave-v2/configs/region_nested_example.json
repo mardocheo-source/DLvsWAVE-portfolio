@@ -1,0 +1,101 @@
+{
+  "training_start": "1900-01-01",
+  "catalog_cutoff": "2026-07-31T23:59:59Z",
+  "forecast_start": "2026-08-01",
+  "forecast_end": "2027-01-31",
+  "selection_start": "2026-09-01",
+  "selection_mode": "first_event",
+  "max_geo_level": 3,
+  "download_floor": 5.5,
+  "energy_magnitude": 7.7,
+  "location_magnitude": 6.8,
+  "maximum_energy_target_reduction": 0.5,
+  "magnitude_step": 0.1,
+  "energy_validation_events": 2,
+  "location_validation_days": 730,
+  "minimum_location_validation_events": 12,
+  "minimum_zone_validation_events": 1,
+  "minimum_location_training_events": 40,
+  "minimum_zone_training_events": 8,
+  "max_energy_validation_age_years": 5,
+  "max_training_event_removal_fraction": 0.25,
+  "minimum_energy_training_events": 12,
+  "zone_counts": [
+    3,
+    4,
+    5,
+    6,
+    8
+  ],
+  "seed": 42,
+  "astronomy_observer_policy": "geocentric_all_nodes",
+  "main_bodies": [
+    "sun",
+    "moon",
+    "jupiter",
+    "saturn",
+    "mars"
+  ],
+  "download_max_seconds": 900,
+  "request_timeout_seconds": 45,
+  "energy_peak_threshold": 0.7,
+  "minimum_peak_prominence": 0.05,
+  "child_buffer_fraction": 0.1,
+  "minimum_child_buffer_km": 25,
+  "main_fusion_weight": 0.85,
+  "maximum_study_seconds": 14400,
+  "maximum_node_seconds": 5400,
+  "forecast_mode": "one_shot",
+  "location_feature_prefixes": [
+    "astro_"
+  ],
+  "branches": {
+    "main_bodies_branch": {
+      "trials_per_family": 3000,
+      "refinement_trials": 3000
+    },
+    "minor_bodies_branch": {
+      "trials_per_family": 2400,
+      "refinement_trials": 240
+    }
+  },
+  "energy_branch_max_seconds": 2400,
+  "energy_refinement_reserve_seconds": 600,
+  "energy_final_reserve_seconds": 180,
+  "location_branch_max_seconds": 2400,
+  "location_refinement_reserve_seconds": 600,
+  "analog_max_seconds": 1200,
+  "analog_trials": 3000,
+  "analog_refinement_trials": 600,
+  "minimum_child_location_accuracy": 0.75,
+  "minimum_child_macro_recall": 0.6,
+  "threads": 1,
+  "minimum_child_zone_margin": 0.05,
+  "follow_peak_without_quality_gate": true,
+  "initial_geo_level": 0,
+  "child_weeks_before": 2,
+  "child_weeks_after": 2,
+  "child_rectangle_recent_years": 10,
+  "child_rectangle_half_life_years": 5,
+  "child_rectangle_axis_coverage": 0.98,
+  "child_rectangle_buffer_km": 200,
+  "child_rectangle_min_events": 12,
+  "zone_reconciliation_enabled": true,
+  "zone_reconciliation_max_gap_days": 7,
+  "zone_reconciliation_max_score_gap": 0.05,
+  "huntanyway": true,
+  "energy_fusion_policy": {
+    "parent_tolerance_weeks": 1
+  },
+  "initial_membership_rules": [
+    {
+      "type": "rectangle",
+      "bounds": [
+        28.0,
+        47.0,
+        128.0,
+        150.0
+      ]
+    }
+  ]
+}

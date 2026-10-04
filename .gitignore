@@ -1,0 +1,91 @@
+# Python bytecode & environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+.~lock.*
+
+# ==========================================
+# GENERATED RUNS / LOCAL OUTPUT
+# ==========================================
+
+DLVS-Wave-v2/production_runs/
+DLVS-Wave-v2/studies_output/
+DLVS-Wave-v2/tmp/
+
+DLVS-Wave-v2/tests_env/multi_country_century_tests/
+DLVS-Wave-v2/tests_env/demo_visual_run/
+DLVS-Wave-v2/tests_env/ephemerides_cache/
+
+# Generic generated model/cache directories
+**/trial_cache/
+**/selected_models/
+**/ephemerides_cache/
+
+# Generated ML/model binaries
+*.npz
+*.npy
+*.pt
+*.pth
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Python logs
+*.log
+
+# ==================================================
+# LOCAL DATABASE / EXPERIMENT ARCHIVES / GENERATED
+# ==================================================
+
+/DB/
+/constant_explorer/
+
+/master/.build/
+
+# Root generated studies
+/studies_output/
+
+# Build / presentation temporary artifacts
+**/.build/
+node_modules/
+
+
+# Generated test artifacts
+DLVS-Wave-v2/tests_env/*.png
+DLVS-Wave-v2/tests_env/*.csv
+DLVS-Wave-v2/tests_env/*.json
+DLVS-Wave-v2/tests_env/*report.md
+DLVS-Wave-v2/tests_env/*audit.md
+DLVS-Wave-v2/tests_env/*manifest.md
+
+# Keep actual test source code
+!DLVS-Wave-v2/tests_env/*.py
+!DLVS-Wave-v2/tests_env/README.md
+
+/temp01.txt
+
+# Portfolio: private inputs and generated artifacts stay local
+.venv/
+.secrets/
+.env
+.env.*
+*.env
+*.db
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+outputs/
+.pipeline_serial
+__pycache__/
+*.py[cod]

@@ -1,0 +1,50 @@
+{
+  "energy_feature_counts": {
+    "kan": [
+      4,
+      8,
+      12,
+      16
+    ],
+    "deep_learning": [
+      4,
+      8,
+      12,
+      16
+    ],
+    "lcs": [
+      2,
+      4,
+      6,
+      8
+    ]
+  },
+  "astronomy_shift_max_base_fields": 12,
+  "max_parallel_workers": 1,
+  "minimum_available_memory_mb": 4096,
+  "cover_location_map": false,
+  "energy_branch_max_seconds": 10800,
+  "energy_refinement_reserve_seconds": 1800,
+  "energy_final_reserve_seconds": 600,
+  "threads": 1,
+  "minimum_disk_free_mb": 750,
+  "branches": {
+    "main_bodies_branch": {
+      "trials_per_family": 500,
+      "refinement_trials": 300
+    },
+    "minor_bodies_branch": {
+      "trials_per_family": 500,
+      "refinement_trials": 300
+    }
+  },
+  "astro_offset_weeks": [
+    -13,
+    4,
+    13
+  ],
+  "compact_astronomy": true,
+  "maximum_seconds": 25200,
+  "infill_seed_mode": "pi_pairs",
+  "terminal_infill": "all_observed"
+}

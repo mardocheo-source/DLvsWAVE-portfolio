@@ -1,0 +1,48 @@
+{
+  "status": "verified_execution_smoke_only",
+  "task": "friedman1",
+  "n_train": 128,
+  "n_test": 128,
+  "noise_std": 0.0,
+  "seed": 0,
+  "seed_count": 1,
+  "max_iter": 10,
+  "jobs": 1,
+  "device": "cpu",
+  "command": "python cli.py train --task friedman1 --banks chebyshev --readouts ridge --deep-presets small --deep-device cpu --seeds 1 --n-train 128 --n-test 128 --max-iter 10 --jobs 1 --db outputs/portfolio-smoke.db",
+  "results": [
+    {
+      "id": 1,
+      "bank": "chebyshev",
+      "readout": "ridge",
+      "mse_test": 2.487930308083363,
+      "r2": 0.883239162961607,
+      "parameters": 46,
+      "derived_inversion_diagnostic": false
+    },
+    {
+      "id": 2,
+      "bank": "__none__",
+      "readout": "deepnet_small",
+      "mse_test": 19.021879397455344,
+      "r2": 0.10728586195758105,
+      "parameters": 737,
+      "derived_inversion_diagnostic": false
+    },
+    {
+      "id": 3,
+      "bank": "__none____INV",
+      "readout": "deepnet_small",
+      "mse_test": 66.23934381930388,
+      "r2": -2.1086727807797896,
+      "parameters": 737,
+      "derived_inversion_diagnostic": true
+    }
+  ],
+  "limitations": [
+    "small single-seed execution check, not a tuned model comparison",
+    "neural training budget limited to 10 epochs",
+    "latency values intentionally omitted; hardware/measurement dependent",
+    "not an earthquake forecast or operational validation"
+  ]
+}

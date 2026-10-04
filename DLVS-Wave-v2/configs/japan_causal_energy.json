@@ -1,0 +1,73 @@
+{
+  "location_reference_root": "/mnt/git0/git/repository/DLvsWAVE/DLVS-Wave-v2/studies_output/20260907T011200JST_japan_full_replay_4a72c91e",
+  "japan_catalog": "/mnt/git0/git/repository/DLvsWAVE/DB/japan-m79plus-7d-aug-sep2026-cutoff-jul31-recency-globalneg-v21/01_inputs/usgs_japan_m55_1900_cutoff_20260731T1500Z_fresh.csv",
+  "world_catalog": "/mnt/git0/git/repository/DLvsWAVE/DB/japan-m75plus-180d-shift90-operators-quantile4-v17/01_inputs/usgs_world_m75_1900_20260801.csv",
+  "raw_astronomy": {
+    "main_bodies_branch": "/mnt/git0/git/repository/DLvsWAVE/DLVS-Wave-v2/tests_env/multi_country_century_tests/loc1_japan_tohoku_1900_2030/master_7d_summarized.csv",
+    "minor_bodies_branch": "/mnt/git0/git/repository/DLvsWAVE/DLVS-Wave-v2/studies_output/AUTORUN_japan_megathrust_m77_aug2026_jan2027_production/minor_bodies_deep_35min_branch/01_data/minor_bodies_raw_master.csv"
+  },
+  "magnitude": 7.7,
+  "training_start": "1900-01-01",
+  "catalog_cutoff": "2026-07-31T15:00:00",
+  "forecast_issue": "2026-07-31T15:00:00",
+  "validation_event_weeks": [
+    "2003-09-22",
+    "2011-03-07"
+  ],
+  "validation_half_width_weeks": 13,
+  "forecast_first_week": "2026-08-03",
+  "forecast_last_week": "2027-01-25",
+  "astro_offset_weeks": [
+    -26,
+    -13,
+    -8,
+    -4,
+    4,
+    8,
+    13,
+    26
+  ],
+  "seismic_lag_weeks": [
+    1,
+    2,
+    4,
+    8,
+    13,
+    26,
+    52
+  ],
+  "infill_seed_mode": "pi_pairs",
+  "pi_pair_offset": 0,
+  "terminal_infill": "all_observed",
+  "seed": 42,
+  "threads": 1,
+  "energy_train_start_years": [
+    1900,
+    1920,
+    1940,
+    1960,
+    1980
+  ],
+  "energy_epochs": [
+    40,
+    80,
+    120
+  ],
+  "energy_branch_max_seconds": 10800,
+  "maximum_seconds": 14400,
+  "energy_refinement_reserve_seconds": 1800,
+  "energy_final_reserve_seconds": 600,
+  "energy_fusion_candidates": 10,
+  "main_fusion_weight": 0.85,
+  "location_method_fusion_a_weight": 0.5,
+  "branches": {
+    "main_bodies_branch": {
+      "trials_per_family": 4000,
+      "refinement_trials": 480
+    },
+    "minor_bodies_branch": {
+      "trials_per_family": 2400,
+      "refinement_trials": 240
+    }
+  }
+}

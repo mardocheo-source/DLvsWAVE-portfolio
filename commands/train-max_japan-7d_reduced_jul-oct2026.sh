@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+# DLvsWAVE train-max — REDUCED master, finestra forecast 15 lug -> 15 ott 2026
+# Motivo: un precedente forecast a risoluzione 30gg aveva flagged come dangerous
+# il periodo 1 agosto -> 30 settembre 2026; questo run zoom-in a 7gg sull'intera
+# finestra estesa (15 lug -> 15 ott) per validare/affinare quella diagnosi.
+# DB / log suffixati per non sovrascrivere i run precedenti.
+set -e
+
+cd "$(dirname "$0")/.."
+
+export PYTHONUNBUFFERED=1
+
+./.venv/bin/python -u cli.py train-max \
+  --task /mnt/git0/git/repository/astro-USGS2/DB/japan-mag80-1900plus-7d-focus-noise/master_with_usgs_core_astrofmt_reduced.csv \
+  --target_cols_list mag \
+  --skip_cols_list date,depth,latitude,longitude \
+  --metric-mode auto \
+  --metric-target-threshold 0.1 \
+  --metric-prediction-threshold 0.5 \
+  --event-score-mode isolation \
+  --target-window-threshold 0.1 \
+  --target-window-event-count 1 \
+  --target-window-pre-records 5 \
+  --target-window-post-records 3 \
+  --isolated-event-windows \
+  --backtest-event-windows \
+  --backtest-event-count 2 \
+  --backtest-step-events 1 \
+  --backtest-pre-records 5 \
+  --backtest-post-records 3 \
+  --backtest-min-train-events 2 \
+  --backtest-max-windows 1 \
+  --backtest-recency-weight exp \
+  --backtest-recency-strength 1.0 \
+  --recent-validation-window \
+  --recent-validation-event-count 1 \
+  --recent-validation-pre-records 5 \
+  --recent-validation-post-records 3 \
+  --recent-validation-weight 3.0 \
+  --train-recency-weight exp \
+  --train-recency-strength 1.0 \
+  --train-event-weight auto \
+  --train-max-event-weight 8.0 \
+  --forecast-start-date 2026-07-15 \
+  --forecast-end-date 2026-10-15 \
+  --forecast-trainset train2forecast \
+  --enable-lcs-in-max \
+  --hybrid-lcs \
+  --hybrid-partners passthrough:ridge,random_projection:ridge,deep:tiny,deep:small \
+  --hybrid-modes and,weighted \
+  --hybrid-alphas 0.35,0.5,0.75 \
+  --hybrid-threshold 0.5 \
+  --final-eval-rank-power 1.0 \
+  --final-eval-low-threshold 1e-9 \
+  --final-eval-negative-weight 3.0 \
+  --final-eval-best-fraction 0.25 \
+  --final-eval-worst-fraction 0.10 \
+  --final-eval-shape-power 1.5 \
+  --auto-inherit-levels 0 \
+  --best 5 \
+  --seeds 4:4 \
+  --max-iter 300 \
+  --keep-best 3 \
+  --keep-worst 2 \
+  --invert-twin-min-std 1e-4 \
+  --lcs-max-active-conditions 8 \
+  --lcs-min-fitness-for-subsumption 0.7 \
+  --readability-weight 0.35 \
+  --readability-floor 0.3 \
+  --db japan_trainmax_7d_mag80_reduced_jul-oct2026.db \
+  --post-hybrid-artifacts \
+  --post-hybrid-logic and \
+  --post-hybrid-normalize auto \
+  --post-hybrid-top-candidates 30 \
+  --post-hybrid-top-pairs 20 \
+  --verbose 2>&1 | tee /tmp/dlvswave_run_japan_7d_reduced_jul-oct2026.log
